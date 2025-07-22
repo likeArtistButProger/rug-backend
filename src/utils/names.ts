@@ -15,13 +15,15 @@ const RANDOM_SECOND_PARTS = [
     "Rug",
     "Moe",
     "Bot",
-    "AI",
-    "Tech",
-    "Lab",
-    "Core",
+    "Trench",
+    "Rinsed",
+    "Jeet",
     "Net",
-    "Hub",
-    "Zone",
+    "Wealth",
+    "Pump",
+    "Degen",
+    "Hodl",
+    "Bear"
 ]
 
 export const generateRandomName = (): string => {

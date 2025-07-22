@@ -3,7 +3,7 @@ import { Router } from "express";
 
 const userRouter = Router();
 
-userRouter.post("/create-new", (req, res) => {
+userRouter.post("/create", (req, res) => {
     try {
         const user = createUser();
 

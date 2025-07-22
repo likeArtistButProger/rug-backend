@@ -1,0 +1,167 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Rug back API (V0)",
+    "description": "Rug main API",
+    "version": "v0.1.0"
+  },
+  "paths": {
+    "/api/v0/user/create-new": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create random user",
+        "description": "Creates a new user with initial balance",
+        "operationId": "create_user",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "object",
+                      "properties": {
+                            "user_id": {
+                                "type": "string",
+                                "description": "The ID of the created user"
+                            },
+                            "balance": {
+                                "type": "number",
+                                "description": "The initial balance of the user"
+                            }
+                        }
+                    }
+                    }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/swaps-by-networks": {
+      "get": {
+        "tags": [
+          "Public Stats"
+        ],
+        "summary": "Get swaps stats by networks",
+        "description": "Returns volume and swaps total separated by to chain",
+        "operationId": "get_swaps_by_networks",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "stats": {
+                      "type": "object",
+                      "properties": {
+                        "chain_id": {
+                          "type": "string"
+                        },
+                        "volume": {
+                          "type": "number"
+                        },
+                        "swaps": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/swaps-by-networks-weekly": {
+      "get": {
+        "tags": [
+          "Public Stats"
+        ],
+        "summary": "Get swaps stats by networks (weekly)",
+        "description": "Returns volume, swaps and wallets total separated by to chain with week intervals",
+        "operationId": "get_swaps_by_networks_weekly",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "stats": {
+                      "type": "object",
+                      "properties": {
+                        "chain_id": {
+                          "type": "string"
+                        },
+                        "volume": {
+                          "type": "number"
+                        },
+                        "swaps": {
+                          "type": "number"
+                        },
+                        "wallets": {
+                          "type": "number"
+                        },
+                        "week_date": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/new-wallets-by-networks-weekly": {
+      "get": {
+        "tags": [
+          "Public Stats"
+        ],
+        "summary": "Get new wallets by networks (weekly)",
+        "description": "Returns wallets total separated by to chain with week intervals",
+        "operationId": "get_new_wallets_by_networks_weekly",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "stats": {
+                      "type": "object",
+                      "properties": {
+                        "chain_id": {
+                          "type": "string"
+                        },
+                        "wallets": {
+                          "type": "number"
+                        },
+                        "week_date": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
